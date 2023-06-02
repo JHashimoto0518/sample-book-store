@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<SampleBookStoreContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SampleBookStoreContext") ?? throw new InvalidOperationException("Connection string 'SampleBookStoreContext' not found.")));
+    options.UseMySQL(builder.Configuration.GetConnectionString("SampleBookStoreContext") ?? throw new InvalidOperationException("Connection string 'SampleBookStoreContext' not found.")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
